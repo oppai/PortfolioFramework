@@ -1,16 +1,4 @@
 <?php
-function execute(){
-	// simple controller
-	if(!isset($_GET['action'])) $_GET['action'] = 'default';
-	$action = $_GET['action'].'Action';
-
-	if(function_exists($action)){
-		$action();
-	}else{
-		defaultAction();
-	}
-}
-
 function include_layout($layout){?>
 <html>
 	<head>
@@ -50,5 +38,3 @@ function base_url(){
 	global $config;
 	return $config['BASE_URL'];
 }
-
-?>

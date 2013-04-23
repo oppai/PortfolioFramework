@@ -1,4 +1,17 @@
 <?php
+
+function execute(){
+	// simple controller
+	if(!isset($_GET['action'])) $_GET['action'] = 'default';
+	$action = $_GET['action'].'Action';
+
+	if(function_exists($action)){
+		$action();
+	}else{
+		defaultAction();
+	}
+}
+
 function table($val){
 	if(!$val) echo 'table error';
 	if(is_array($val)){
